@@ -33,6 +33,28 @@ Or in cmd:
 taskkill /F /IM Constellation.exe
 ```
 
+## Auto-start when PC starts - Shortcut
+
+By default it does NOT start when PC starts. You have to run it yourself.
+
+If you want it always on, put a shortcut in Startup:
+
+1. Press `Win + R`, type `shell:startup`, Enter
+2. Right click > New > Shortcut
+3. Location: put your exe path, for example:
+   ```
+   C:\Constellation\Constellation.exe
+   ```
+4. Click Next, Name: `Constellation`, Finish
+
+Now it will start every time you log in.
+
+To stop auto-start, delete that shortcut:
+1. Press `Win + R`, type `shell:startup`, Enter
+2. Delete `Constellation` shortcut
+
+Do NOT put the exe in `C:\Windows` or System folder. Keep it in `C:\Constellation` or your own folder.
+
 ## Change it
 
 Open `Constellation.cs`, all instructions are in comments at the top.
