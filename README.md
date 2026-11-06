@@ -33,46 +33,24 @@ Or in cmd:
 taskkill /F /IM Constellation.exe
 ```
 
-## Auto-start when PC starts - Shortcut
+## Auto-start when PC starts
 
 By default it does NOT start when PC starts. You have to run it yourself.
 
-If you want it always on, put a shortcut in Startup:
+If you want it always on:
 
-1. Press `Win + R`, type `shell:startup`, Enter
-2. Right click > New > Shortcut
-3. Location: put your exe path, for example:
+1. Put the exe anywhere you like, for example:
    ```
    C:\Constellation\Constellation.exe
    ```
-4. Click Next, Name: `Constellation`, Finish
+2. Create a shortcut for it:
+   Right click Desktop > New > Shortcut > Location: your exe path > Name: `Constellation` > Finish
+3. Copy that shortcut to Startup folder:
+   Press `Win + R`, type `shell:startup`, Enter, Paste the shortcut there
 
-Now it will start every time you log in.
+Done. Now it will start every time you log in.
 
-To stop auto-start, delete that shortcut:
-1. Press `Win + R`, type `shell:startup`, Enter
-2. Delete `Constellation` shortcut
-
-Do NOT put the exe in `C:\Windows` or System folder. Keep it in `C:\Constellation` or your own folder.
-
-### Note - If you cannot delete the Startup shortcut
-
-This is a Windows bug, not a virus. Dead Startup shortcuts sometimes get stuck in Explorer, it says file is in use even when it is dead and not running.
-
-If Explorer will not delete it, use CMD:
-
-1. Press `Win + R`, type `cmd`, press `Ctrl + Shift + Enter` for Admin
-2. Run this:
-   ```
-   del /f /q "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\Constellation.lnk"
-   ```
-
-If it still says in use, kill Explorer first, then delete, then start Explorer again:
-```
-taskkill /F /IM explorer.exe
-del /f /q "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\Constellation.lnk"
-start explorer.exe
-```
+To stop auto-start, delete the shortcut from Startup folder.
 
 ## Change it
 
